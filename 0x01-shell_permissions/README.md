@@ -1,1 +1,1 @@
-dictionaries
+directory
