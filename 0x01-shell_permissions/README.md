@@ -1,1 +1,1 @@
-mirror
+dictionaries
