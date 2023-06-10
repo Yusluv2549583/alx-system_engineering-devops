@@ -1,1 +1,1 @@
-exercise 2: script to display the content of the file in a directory
+exercise 3: script to display the contents of two files in a directory exercise
