@@ -1,1 +1,1 @@
-exercise 3: script to display the contents of two files in a directory exercise
+exercise 4: script to Display the last 10 lines of a file exercise
