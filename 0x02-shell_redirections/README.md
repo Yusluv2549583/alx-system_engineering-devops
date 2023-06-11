@@ -1,3 +1,1 @@
-Exercise 8: a script that sets the permission to the file hello as follows:
-
-Owner: no permission at all Group: no permission at all Other users: all the permissions
+a script that deletes all the regular files (not the directories) with a .js extension that are present in the current directory and all its subfolders
