@@ -1,3 +1,15 @@
 #!/bin/bash
-ls -t | head
 
+# List all files in the current directory
+files=$(ls -lt | grep "^-" | awk '{print $9}')
+
+# Count the number of files found
+count=$(echo "$files" | wc -l)
+
+# Check if there are fewer than 10 files
+if [ $count -le 10 ]; then
+    echo "$files"
+else
+    # Display the 10 newest files
+    echo "$files" | head -n 10
+fi
