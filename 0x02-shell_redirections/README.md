@@ -1,5 +1,1 @@
-Script started, file is to
-# &&>>×9+926÷38	^[m   scncj^Oo wwn9w93---^[[1;5B^[[1;5B^[[A^[[A^[[1;5A^[[B	^[[B^[^[[A^[kk^[[A^[^[^[	^[^[^[^[yqa^[vbaba
-sh: 1: Syntax error: "&&" unexpected
-# 
-# sksks
+se 8: script that writes into the file ls_cwd_content the result of the command ls -la exercise
