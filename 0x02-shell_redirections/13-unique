@@ -1,3 +1,2 @@
-#!/bin/bash
-$ ./unique_words.sh apple banana apple cherry banana date
+ort | uniq -u
 
