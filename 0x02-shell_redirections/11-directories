@@ -1,3 +1,103 @@
-#!/bin/bash
-find -mindepth 1 -type d | wc -l
 
+Delete .js Files
+
+
+User
+Write a script that deletes all the regular files (not the directories) with a .js extension that are present in the current directory and all its subfolders.
+
+ChatGPT
+Certainly! Here's a script written in Python that deletes all regular files with a .js extension in the current directory and its subfolders:
+
+python
+Copy code
+import os
+
+def delete_files_with_extension(directory, extension):
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if file.endswith(extension) and not os.path.isdir(os.path.join(root, file)):
+                file_path = os.path.join(root, file)
+                os.remove(file_path)
+                print(f"Deleted: {file_path}")
+
+# Set the directory to the current working directory
+directory = os.getcwd()
+# Set the extension to ".js"
+extension = ".js"
+
+delete_files_with_extension(directory, extension)
+Please make sure to exercise caution when running this script, as it will permanently delete the files without confirmation. Make sure to backup any important files before executing it.
+
+Note: This script assumes you have Python installed on your system.
+
+
+
+
+
+User
+Command Write a script that deletes all the regular files (not the directories) with a .js extension that are present in the current directory and all its subfolders.
+
+ChatGPT
+Certainly! Here's a script using the command-line interface that deletes all regular files with a .js extension in the current directory and its subfolders:
+
+bash
+Copy code
+#!/bin/bash
+
+find . -type f -name "*.js" -delete
+To use this script, follow these steps:
+
+Open a text editor and create a new file.
+Copy the script into the file.
+Save the file with a desired name, such as delete_js_files.sh.
+Open a terminal or command prompt.
+Navigate to the directory where you saved the script.
+Make the script executable by running the following command: chmod +x delete_js_files.sh.
+Execute the script by running: ./delete_js_files.sh.
+This script will recursively search for all regular files with a .js extension in the current directory and its subfolders, and delete them without confirmation. Make sure to back up any important files before running the script.
+
+
+
+
+
+User
+Command Write a script that counts the number of directories and sub-directories in the current directory.
+
+The current and parent directories should not be taken into account
+Hidden directories should be counted
+
+ChatGPT
+Sure! Here's a script using the command-line interface that counts the number of directories and subdirectories in the current directory:
+
+bash
+Copy code
+#!/bin/bash
+
+count=0
+
+# Function to count directories recursively
+count_directories() {
+    for item in "$1"/*; do
+        if [[ -d "$item" ]]; then
+            count=$((count + 1))
+            count_directories "$item"
+        fi
+    done
+}
+
+# Exclude current and parent directories from counting
+exclude_dirs=".. ."
+
+# Iterate over directories and subdirectories
+for item in */; do
+    # Check if the item is a directory
+    if [[ -d "$item" ]]; then
+        # Check if the directory is not excluded
+        if [[ ! $exclude_dirs =~ (^|[[:space:]])"$item"($|[[:space:]]) ]]; then
+            count=$((count + 1))
+            count_directories "$item"
+        fi
+    fi
+done
+
+echo "Total directories and subdirectories: $count"
