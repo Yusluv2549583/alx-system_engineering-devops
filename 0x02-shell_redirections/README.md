@@ -1,1 +1,1 @@
-exercise 8: script that writes into the file ls_cwd_content the result of the command ls -la
+Exercise 8: a script that sets the permission to the file hello as follows:
