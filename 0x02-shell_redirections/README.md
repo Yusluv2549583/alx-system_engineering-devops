@@ -1,1 +1,1 @@
-exercise 12: script that displays the 10 newest files in the current directory
+exercise 11: script that counts the number of directories and sub-directories in the current directory
